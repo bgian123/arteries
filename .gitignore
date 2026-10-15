@@ -1,0 +1,14 @@
+__pycache__/
+*.egg-info/
+.venv/
+*.npz
+!src/arteries/data/marnet.npz
+!examples/demo_baltic_benelux_core.npz
+work/
+/build/
+picotte_slurm_guide.md
+RUN_ON_PICOTTE.md
+slurm/*.bak
+.DS_Store
+.pytest_cache/
+PUBLISHING.md
