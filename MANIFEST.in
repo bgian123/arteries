@@ -1,0 +1,7 @@
+include LICENSE README.md
+recursive-include src/arteries/data *.npz *.txt
+prune examples
+prune slurm
+prune scripts
+prune docs
+prune tests

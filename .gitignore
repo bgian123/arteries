@@ -12,3 +12,4 @@ slurm/*.bak
 .DS_Store
 .pytest_cache/
 PUBLISHING.md
+dist/

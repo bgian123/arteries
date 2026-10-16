@@ -2,7 +2,7 @@
 
 **Calculate lowest-cost distances between the world's cities (population > 100,000) over a real infrastructure network, with land kilometers, sea kilometers, and port calls priced to your desired specifications.**
 
-![New Jersey road network before and after simplification](docs/figures/nj_before_after_simplification.png)
+![New Jersey road network before and after simplification](https://raw.githubusercontent.com/bgian123/arteries/main/docs/figures/nj_before_after_simplification.png)
 
 Modeling distance is important. Economists tend to rely on great-circle (as-the-crow-flies) distances because of their numerical simplicity. The caveat is that a majority of goods do not travel in clean arcs to their destinations. They move by road to a port, by sea along shipping lanes and through chokepoints, and by road again. Arteries computes that route for every pair of cities with at least 100,000 people.
 
@@ -24,7 +24,7 @@ res = net.route_costs(
 df = res.to_frame()      # origin, destination, cost, land_km, sea_km, total_km, sea_legs
 ```
 
-* **Exact.** The answer equals Dijkstra on the full multimodal graph for any weights. Proof and tests: [docs/METHODS.md](docs/METHODS.md).
+* **Exact.** The answer equals Dijkstra on the full multimodal graph for any weights. Proof and tests: [docs/METHODS.md](https://github.com/bgian123/arteries/blob/main/docs/METHODS.md).
 * **Fast.** Routing all 2,075 × 2,075 city pairs takes about 20 seconds, because the expensive land shortest paths are precomputed once and every new weighting only reweights a small terminal graph.
 * **Decomposed.** Every result reports land km, sea km, and the number of sea legs of the cheapest route.
 * **Scenarios.** You can close whole sea regions (`closed_regions=["red_sea"]`, `"persian_gulf"`, `"black_sea"`, `"baltic_sea"`, or any lat/lon box), turn river and lake ports into land-only terminals (`max_port_lane_km`), close chokepoints (`suez`, `panama`, `babalmandab`, `malacca`, `ormuz`, `gibraltar`, `bosporus`, `dardanelles`, `sunda`, `bering`, `chili`, `south_africa`, `northwest`), or rescale individual sea lanes with `sea_edge_multiplier`.
@@ -52,7 +52,7 @@ Data is cached in `~/.cache/arteries`; set the `ARTERIES_DATA` environment varia
 ## Rebuilding the data
 
 The build pipeline (`python -m arteries.build ...`) and the Slurm scripts (`slurm/`)
-reproduce the release from the raw extracts. See [docs/METHODS.md](docs/METHODS.md)
+reproduce the release from the raw extracts. See [docs/METHODS.md](https://github.com/bgian123/arteries/blob/main/docs/METHODS.md)
 for every step, the exactness arguments, validation results and resource use.
 
 ## Licenses and attribution
